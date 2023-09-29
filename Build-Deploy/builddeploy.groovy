@@ -16,7 +16,7 @@
         stage("Build"){
             steps {
             println "Here im building code "
-            sh "mvn package"
+            sh "mvn clean package"
             sh "ls -l target"
             }
            }
