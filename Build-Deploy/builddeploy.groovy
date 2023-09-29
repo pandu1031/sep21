@@ -33,7 +33,10 @@
            stage("Deploy"){
             steps{
                 println "Deploying artifacts from jenkins to tomcat server"
-                sh "scp -i /tmp/devops23.pem target/hello-${BUILD_NUMBER}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps/"
+                sh "whoami"
+                sh "hostname -i"
+                sh "ls -l /tmp/devops23.pem/"
+                sh "scp -o StrictHostKeyChecking=no -i /tmp/devops23.pem target/hello-${BUILD_NUMBER}.war ec2-user@${SERVER_IP}:/var/lib/tomcat/webapps/"
             }
         }
      }
