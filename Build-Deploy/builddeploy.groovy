@@ -1,6 +1,6 @@
 //Declarative pipeline
  pipeline {
-    agent any 
+    agent {label 'slave1'} 
     parameters{
         string(name: 'BRANCH_NAME', defaultValue: '' , description: 'Enter the source code branch')
         string(name: 'SERVER_IP', defaultValue: '', description: 'Enter the server ip')
